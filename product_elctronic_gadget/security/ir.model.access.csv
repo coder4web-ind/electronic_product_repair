@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_electronic_product_brand_user,electronic.product.brand.user,model_electronic_product_brand,base.group_user,1,1,1,1
+access_electronic_product_category_user,electronic.product.category.user,model_product_category,base.group_user,1,1,1,1
+access_electronic_product_device_user,electronic.product.template.user,model_product_template,base.group_user,1,1,1,1

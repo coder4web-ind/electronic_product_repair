@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="menu_repair_brand"
+              name="Brands"
+              parent="repair.repair_menu_config"
+              action="reapir_device_brand_action"
+              sequence="10"/>
+
+    <menuitem id="menu_repair_category"
+              name="Device Categories"
+              parent="repair.repair_menu_config"
+              action="reapir_device_category_action"
+              sequence="15"/>
+</odoo>

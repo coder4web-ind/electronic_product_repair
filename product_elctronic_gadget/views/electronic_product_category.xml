@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="electronic_product_category_action" model="ir.actions.act_window">
+        <field name="name">Category</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="view_electronic_product_category_form_inherit_product_category" model="ir.ui.view">
+        <field name="name">electronic.product.category.form.inherit.product.category</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Electronic &amp; Product Category Settings">
+                    <group>                       
+                        <field name="is_device_category"/>
+                        <field name="required_imeino" invisible="not is_device_category" />
+                        <field name="required_serial_no"  invisible="not is_device_category"/>
+                        <field name="require_fault_code" invisible="not is_device_category"/>
+                    </group>
+                    <group>
+                        <field name="dop_warranty_months" invisible="not is_device_category"/>
+                        <field name="production_warranty_months" invisible="not is_device_category"/>
+                        <field name="default_tat_hours" invisible="not is_device_category"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
