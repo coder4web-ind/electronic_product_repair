@@ -26,7 +26,7 @@ class RepairOrder(models.Model):
     )
 
     brand_id = fields.Many2one(
-        "repair.device.brand",
+        "product_electronic_gadget.electronic.product.brand",
         string="Brand",
         help="e.g., Apple, Samsung, Xiaomi",
     )
@@ -47,7 +47,7 @@ class RepairOrder(models.Model):
     device_id = fields.Many2one(
         "product.template",
         string="Device",
-        domain="[('repair_brand_id', '=', brand_id), ('categ_id', '=', category_id)]",
+        domain="[('product_brand_id', '=', brand_id), ('categ_id', '=', category_id)]",
     )
 
     job_summary = fields.Text(string="Reported Fault in Device")
@@ -101,7 +101,7 @@ class RepairOrder(models.Model):
         for rec in self:
             if rec.brand_id:
                 matching_devices = self.env["product.template"].search(
-                    [("repair_brand_id", "=", rec.brand_id.id)]
+                    [("product_brand_id", "=", rec.brand_id.id)]
                 )
                 rec.allowed_category_ids = matching_devices.mapped("categ_id")
             else:

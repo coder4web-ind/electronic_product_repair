@@ -1,8 +1,8 @@
 from odoo import models,fields,api
 from odoo.exceptions import ValidationError,UserError
 
-class RepairBrand(models.Model):
-    _name = "repair.device.brand"
+class ElectronicProductBrand(models.Model):
+    _name = "electronic.product.brand"
     _description = "Table for electronics gadgets brands"
 
     name = fields.Char("Brand Name", size=64, required=True)
@@ -87,6 +87,6 @@ class RepairBrand(models.Model):
 
     active = fields.Boolean(string="Active", default=True)
 
-    _unique_manufacturer_code = models.UniqueIndex(("code"),message="The Brand Code must be unique!")
-    _index_name_idx = models.Index(("name"))
-    _index_code_idx = models.Index(("code"))
+    _unique_manufacturer_code = models.UniqueIndex("code",message="The Brand Code must be unique!")
+    _index_name_idx = models.Index("name")
+    _index_code_idx = models.Index("code")

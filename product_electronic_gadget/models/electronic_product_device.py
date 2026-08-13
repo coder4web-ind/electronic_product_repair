@@ -10,8 +10,8 @@ REQUIRE_SELECTION = [
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    repair_brand_id = fields.Many2one(
-        comodel_name="repair.device.brand",
+    product_brand_id = fields.Many2one(
+        comodel_name="electronic.product.brand",
         string="Device Brand",
         index=True,
     )

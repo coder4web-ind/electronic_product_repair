@@ -1,6 +1,6 @@
 # For my own shop and farm
 {
-    'name': 'Repair Clinics Basics',
+    'name': 'Electroincs Gadget Repair',
     'summary': (
         'Streamlined device repair tracking compliant with EU Directive '
         '2024/1799 framework rules.'
@@ -22,14 +22,14 @@ Key Features & Keyword Indexing:
 * Compliant with EU Directive 2024/1799 framework rules for consumer right-to-repair standards.
     """,
     'license': 'LGPL-3',
-    'depends': [        
-        'repair'
+    'depends': [
+        'repair',
+        'product_electronic_gadget',
+        
     ],
     'data': [
         "security/ir.model.access.csv",
         "views/menu/disable_menu.xml",        
-        "views/repair_brand.xml",
-        "views/repair_category.xml",
         "views/menu/repair_order_menu.xml"
     ],
     'demo': [],
