@@ -87,6 +87,5 @@ class ElectronicProductBrand(models.Model):
 
     active = fields.Boolean(string="Active", default=True)
 
-    _unique_manufacturer_code = models.UniqueIndex("code",message="The Brand Code must be unique!")
-    _index_name_idx = models.Index("name")
-    _index_code_idx = models.Index("code")
+    _unique_manufacturer_code = models.UniqueIndex("(code)",message="The Brand Code must be unique!")
+    _index_name_idx = models.Index("(name)")

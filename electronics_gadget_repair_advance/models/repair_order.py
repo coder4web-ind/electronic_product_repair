@@ -26,26 +26,26 @@ class RepairOrder(models.Model):
     )
 
     brand_id = fields.Many2one(
-        "product_electronic_gadget.electronic.product.brand",
+        "electronic.product.brand",
         string="Brand",
         help="e.g., Apple, Samsung, Xiaomi",
     )
 
     allowed_category_ids = fields.Many2many(
-        "product.category",
+        comodel_name="product.category",
         compute="_compute_allowed_category_ids",
         string="Allowed Unit Types",
     )
     
     category_id = fields.Many2one(
-        "product.category",
+        comodel_name="product.category",
         string="Device Category",
         domain="[('id', 'in', allowed_category_ids)]",
         help="Select category under Goods (e.g., Smartphones, Tablets, Laptops)",
     )
     
     device_id = fields.Many2one(
-        "product.template",
+        comodel_name="product.template",
         string="Device",
         domain="[('product_brand_id', '=', brand_id), ('categ_id', '=', category_id)]",
     )
