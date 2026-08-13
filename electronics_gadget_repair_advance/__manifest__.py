@@ -22,9 +22,9 @@ Key Features & Keyword Indexing:
 * Compliant with EU Directive 2024/1799 framework rules for consumer right-to-repair standards.
     """,
     'license': 'LGPL-3',
-    'depends': [
-        'repair',
+    'depends': [        
         'product_electronic_gadget',
+        'repair'
         
     ],
     'data': [
