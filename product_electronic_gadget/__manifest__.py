@@ -11,7 +11,8 @@
     "data": [
         "security/ir.model.access.csv",
         "views/electronic_product_brand.xml",
-        "views/electronic_product_category.xml"
+        "views/electronic_product_category.xml",
+        "views/electronic_product_device.xml"
     ],
     "installable": True,
 } 
